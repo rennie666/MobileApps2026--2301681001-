@@ -1,7 +1,7 @@
 package com.app.tracker.model
 
 data class Task(
-    val id: String,
+    val id: Int = 0,
     val title: String,
     val description: String,
     val category: String, // e.g. "Work", "Personal", "Health", "Study"

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/nav_home"
+        android:id="@+id/taskListFragment"
         android:icon="@drawable/ic_home"
-        android:title="Home" />
+        android:title="Tasks" />
     <item
-        android:id="@+id/nav_detail"
-        android:icon="@drawable/ic_detail"
-        android:title="Task Detail" />
-    <item
-        android:id="@+id/nav_statistics"
+        android:id="@+id/statisticsFragment"
         android:icon="@drawable/ic_stats"
         android:title="Statistics" />
+    <item
+        android:id="@+id/scannerFragment"
+        android:icon="@drawable/ic_scan"
+        android:title="QR Scanner" />
 </menu>

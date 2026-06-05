@@ -1,20 +1,24 @@
-package com.app.tracker
+package com.app.tracker.ui.statistics
 
-import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import com.app.tracker.data.TaskRepository
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.app.tracker.R
+import com.app.tracker.di.ServiceLocator
 import com.app.tracker.model.Task
 import com.app.tracker.ui.TaskProgressRingView
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.app.tracker.ui.viewmodel.TaskViewModel
 
-class StatisticsActivity : AppCompatActivity() {
+class StatisticsFragment : Fragment() {
 
-    private lateinit var repository: TaskRepository
+    private lateinit var viewModel: TaskViewModel
 
     // Views
     private lateinit var progressRingView: TaskProgressRingView
@@ -38,35 +42,41 @@ class StatisticsActivity : AppCompatActivity() {
     private lateinit var tvStudyRatio: TextView
     private lateinit var pbStudy: ProgressBar
 
-    private lateinit var bottomNav: BottomNavigationView
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_statistics, container, false)
+    }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_statistics)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        repository = TaskRepository(this)
+        // MVVM Initialization using shared activity ViewModel
+        val repository = ServiceLocator.provideTaskRepository(requireContext())
+        val factory = TaskViewModel.TaskViewModelFactory(repository)
+        viewModel = ViewModelProvider(requireActivity(), factory)[TaskViewModel::class.java]
 
         // Bind Views
-        progressRingView = findViewById(R.id.progress_ring_view)
-        tvTotal = findViewById(R.id.tv_total_tasks)
-        tvCompleted = findViewById(R.id.tv_completed_tasks)
-        tvPending = findViewById(R.id.tv_pending_tasks)
+        progressRingView = view.findViewById(R.id.progress_ring_view)
+        tvTotal = view.findViewById(R.id.tv_total_tasks)
+        tvCompleted = view.findViewById(R.id.tv_completed_tasks)
+        tvPending = view.findViewById(R.id.tv_pending_tasks)
 
-        tvWorkRatio = findViewById(R.id.tv_work_ratio)
-        pbWork = findViewById(R.id.pb_work)
+        tvWorkRatio = view.findViewById(R.id.tv_work_ratio)
+        pbWork = view.findViewById(R.id.pb_work)
 
-        tvPersonalRatio = findViewById(R.id.tv_personal_ratio)
-        pbPersonal = findViewById(R.id.pb_personal)
+        tvPersonalRatio = view.findViewById(R.id.tv_personal_ratio)
+        pbPersonal = view.findViewById(R.id.pb_personal)
 
-        tvHealthRatio = findViewById(R.id.tv_health_ratio)
-        pbHealth = findViewById(R.id.pb_health)
+        tvHealthRatio = view.findViewById(R.id.tv_health_ratio)
+        pbHealth = view.findViewById(R.id.pb_health)
 
-        tvStudyRatio = findViewById(R.id.tv_study_ratio)
-        pbStudy = findViewById(R.id.pb_study)
+        tvStudyRatio = view.findViewById(R.id.tv_study_ratio)
+        pbStudy = view.findViewById(R.id.pb_study)
 
-        bottomNav = findViewById(R.id.bottom_navigation)
-
-        // Apply visual styling tints to progress bars dynamically
+        // Apply visual styling tints
         val tintColor = ColorStateList.valueOf(Color.parseColor("#121212")) // dark_accent
         val bgTintColor = ColorStateList.valueOf(Color.parseColor("#EAECEF"))
 
@@ -76,40 +86,13 @@ class StatisticsActivity : AppCompatActivity() {
             pb.progressBackgroundTintList = bgTintColor
         }
 
-        // Bottom Navigation setup
-        bottomNav.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_home -> {
-                    val intent = Intent(this, MainActivity::class.java).apply {
-                        flags = Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
-                    }
-                    startActivity(intent)
-                    overridePendingTransition(0, 0)
-                    true
-                }
-                R.id.nav_detail -> {
-                    val intent = Intent(this, TaskDetailActivity::class.java).apply {
-                        flags = Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
-                    }
-                    startActivity(intent)
-                    overridePendingTransition(0, 0)
-                    true
-                }
-                R.id.nav_statistics -> true
-                else -> false
-            }
+        // Observe ViewModel LiveData
+        viewModel.allTasks.observe(viewLifecycleOwner) { tasks ->
+            calculateAndDisplayStats(tasks)
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        bottomNav.selectedItemId = R.id.nav_statistics
-        overridePendingTransition(0, 0)
-        calculateAndDisplayStats()
-    }
-
-    private fun calculateAndDisplayStats() {
-        val tasks = repository.getTasks()
+    private fun calculateAndDisplayStats(tasks: List<Task>) {
         val totalCount = tasks.size
         val completedCount = tasks.count { it.isCompleted }
         val pendingCount = totalCount - completedCount
