@@ -132,10 +132,6 @@ class TaskListFragment : Fragment() {
 
     private fun updateSummary(tasks: List<Task>) {
         val pendingCount = tasks.count { !it.isCompleted }
-        summaryText.text = if (pendingCount == 1) {
-            "You have 1 pending task for today."
-        } else {
-            "You have $pendingCount pending tasks for today."
-        }
+        summaryText.text = resources.getQuantityString(R.plurals.summary_pending_tasks, pendingCount, pendingCount)
     }
 }

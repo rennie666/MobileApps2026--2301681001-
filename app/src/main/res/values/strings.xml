@@ -1,3 +1,88 @@
 <resources>
     <string name="app_name">Tracker</string>
+    
+    <!-- Home / Task List Fragment -->
+    <string name="welcome_rennie">Hello, Rennie!</string>
+    <string name="summary_text_default">You have 0 pending tasks for today.</string>
+    <string name="label_categories">Categories</string>
+    <string name="category_all">All</string>
+    <string name="category_work">Work</string>
+    <string name="category_personal">Personal</string>
+    <string name="category_health">Health</string>
+    <string name="category_study">Study</string>
+    <string name="label_tasks">Tasks</string>
+    <string name="empty_tasks_title">No tasks in this category</string>
+    <string name="empty_tasks_subtitle">Click + to add a new task</string>
+    
+    <!-- Task Detail Fragment -->
+    <string name="title_create_task">Create New Task</string>
+    <string name="title_edit_task">Task Details</string>
+    <string name="label_title">Title</string>
+    <string name="hint_title">Enter task title</string>
+    <string name="label_description">Description</string>
+    <string name="hint_description">Enter task details...</string>
+    <string name="label_category">Category</string>
+    <string name="label_priority">Priority</string>
+    <string name="priority_low">Low</string>
+    <string name="priority_medium">Medium</string>
+    <string name="priority_high">High</string>
+    <string name="label_due_date">Due Date</string>
+    <string name="hint_due_date">Select Date</string>
+    <string name="label_completed">Completed</string>
+    <string name="btn_save">Save Task</string>
+    <string name="btn_delete">Delete Task</string>
+    <string name="btn_share">Share Task</string>
+    
+    <!-- Statistics Fragment -->
+    <string name="title_statistics">Statistics</string>
+    <string name="subtitle_statistics">Track your productivity and progress</string>
+    <string name="label_completion">Completion</string>
+    <string name="stats_total_default">Total Tasks: 0</string>
+    <string name="stats_completed_default">Completed: 0</string>
+    <string name="stats_pending_default">Pending: 0</string>
+    <string name="title_category_breakdown">Category Breakdown</string>
+    
+    <!-- Scanner Fragment -->
+    <string name="title_scanner">QR Scanner</string>
+    <string name="subtitle_scanner">Import tasks from QR codes</string>
+    <string name="scanner_card_title">Camera Scan Required</string>
+    <string name="scanner_card_desc">Point your camera at a task planner QR code. The app will automatically parse the QR data and import it as a new task.</string>
+    <string name="btn_start_scan">Start QR Scan</string>
+
+    <!-- Content Descriptions -->
+    <string name="desc_add_task">Add Task</string>
+
+    <!-- Plurals / Dynamic Texts -->
+    <plurals name="summary_pending_tasks">
+        <item quantity="one">You have 1 pending task for today.</item>
+        <item quantity="other">You have %d pending tasks for today.</item>
+    </plurals>
+
+    <!-- Toasts & Info Messages -->
+    <string name="toast_title_empty">Title cannot be empty!</string>
+    <string name="toast_task_updated">Task updated successfully!</string>
+    <string name="toast_task_created">Task created successfully!</string>
+    <string name="toast_task_deleted">Task deleted!</string>
+    <string name="toast_camera_required">Camera permission is required to scan QR codes!</string>
+    <string name="toast_scan_cancelled">Scan cancelled</string>
+    <string name="toast_task_imported_success">Task \'%1$s\' imported successfully!</string>
+    <string name="toast_scan_failed">Failed to parse QR code data!</string>
+    
+    <!-- Scanner Programmatic Strings -->
+    <string name="scanner_prompt">Scan a task planner QR code</string>
+    <string name="scanner_imported_task_default">Imported Task</string>
+    <string name="scanner_scanned_from_qr">Scanned from QR code.</string>
+    <string name="scanner_scanned_task_default">Scanned Task</string>
+
+    <!-- Share Intent -->
+    <string name="share_task_template">📋 Task details from Tracker App:\n\n📌 Title: %1$s\n📝 Description: %2$s\n🏷️ Category: %3$s\n⚠️ Priority: %4$s\n📅 Due Date: %5$s\nStatus: %6$s</string>
+    <string name="status_completed">Completed</string>
+    <string name="status_pending">Pending</string>
+    <string name="share_task_via">Share Task via</string>
+
+    <!-- Dynamic Statistics -->
+    <string name="stats_total">Total Tasks: %1$d</string>
+    <string name="stats_completed">Completed: %1$d</string>
+    <string name="stats_pending">Pending: %1$d</string>
+    <string name="stats_ratio_format">%1$d / %2$d</string>
 </resources>

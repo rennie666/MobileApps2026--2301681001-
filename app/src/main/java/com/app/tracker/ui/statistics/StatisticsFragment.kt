@@ -98,9 +98,9 @@ class StatisticsFragment : Fragment() {
         val pendingCount = totalCount - completedCount
 
         // Set text views
-        tvTotal.text = "Total Tasks: $totalCount"
-        tvCompleted.text = "Completed: $completedCount"
-        tvPending.text = "Pending: $pendingCount"
+        tvTotal.text = getString(R.string.stats_total, totalCount)
+        tvCompleted.text = getString(R.string.stats_completed, completedCount)
+        tvPending.text = getString(R.string.stats_pending, pendingCount)
 
         // Set progress ring
         val overallRate = if (totalCount > 0) {
@@ -127,7 +127,7 @@ class StatisticsFragment : Fragment() {
         val catTotal = catTasks.size
         val catCompleted = catTasks.count { it.isCompleted }
 
-        ratioText.text = "$catCompleted / $catTotal"
+        ratioText.text = getString(R.string.stats_ratio_format, catCompleted, catTotal)
 
         val percentage = if (catTotal > 0) {
             (catCompleted * 100) / catTotal

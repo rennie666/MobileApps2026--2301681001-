@@ -107,25 +107,12 @@ class TaskAdapter(
         }
 
         private fun formatDate(dateStr: String): String {
-            // Convert "2026-06-10" to "Jun 10"
             return try {
-                val parts = dateStr.split("-")
-                if (parts.size == 3) {
-                    val months = arrayOf(
-                        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-                    )
-                    val monthIdx = parts[1].toInt() - 1
-                    val day = parts[2].toInt()
-                    if (monthIdx in 0..11) {
-                        "${months[monthIdx]} $day"
-                    } else {
-                        dateStr
-                    }
-                } else {
-                    dateStr
-                }
-            } catch (e: Exception) {
+                val parser = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.US)
+                val formatter = java.text.SimpleDateFormat("MMM dd", java.util.Locale.getDefault())
+                val date = parser.parse(dateStr)
+                if (date != null) formatter.format(date) else dateStr
+            } catch (e: java.lang.Exception) {
                 dateStr
             }
         }

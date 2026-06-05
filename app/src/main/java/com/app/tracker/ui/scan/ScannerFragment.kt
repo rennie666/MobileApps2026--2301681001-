@@ -32,14 +32,14 @@ class ScannerFragment : Fragment() {
         if (isGranted) {
             startBarcodeScan()
         } else {
-            Toast.makeText(requireContext(), "Camera permission is required to scan QR codes!", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), R.string.toast_camera_required, Toast.LENGTH_LONG).show()
         }
     }
 
     // ZXing scan result launcher
     private val barcodeLauncher = registerForActivityResult(ScanContract()) { result ->
         if (result.contents == null) {
-            Toast.makeText(requireContext(), "Scan cancelled", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), R.string.toast_scan_cancelled, Toast.LENGTH_SHORT).show()
         } else {
             parseAndInsertTask(result.contents)
         }
@@ -82,7 +82,7 @@ class ScannerFragment : Fragment() {
     private fun startBarcodeScan() {
         val options = ScanOptions().apply {
             setDesiredBarcodeFormats(ScanOptions.QR_CODE)
-            setPrompt("Scan a task planner QR code")
+            setPrompt(getString(R.string.scanner_prompt))
             setCameraId(0) // Back camera
             setBeepEnabled(true)
             setBarcodeImageEnabled(false)
@@ -102,7 +102,7 @@ class ScannerFragment : Fragment() {
             if (data.startsWith("{")) {
                 // Parse JSON format
                 val json = JSONObject(data)
-                title = json.optString("title", "Imported Task")
+                title = json.optString("title", getString(R.string.scanner_imported_task_default))
                 description = json.optString("description", "")
                 category = json.optString("category", "Work")
                 priority = json.optString("priority", "Medium")
@@ -118,11 +118,11 @@ class ScannerFragment : Fragment() {
                 if (parts.size > 4) dueDate = parts[4]
             } else {
                 title = data.trim()
-                description = "Scanned from QR code."
+                description = getString(R.string.scanner_scanned_from_qr)
             }
 
             if (title.isEmpty()) {
-                title = "Scanned Task"
+                title = getString(R.string.scanner_scanned_task_default)
             }
 
             val task = Task(
@@ -136,13 +136,13 @@ class ScannerFragment : Fragment() {
             )
 
             viewModel.insertTask(task)
-            Toast.makeText(requireContext(), "Task '$title' imported successfully!", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), getString(R.string.toast_task_imported_success, title), Toast.LENGTH_LONG).show()
 
             // Navigate back to Task List
             findNavController().navigate(R.id.taskListFragment)
 
         } catch (e: Exception) {
-            Toast.makeText(requireContext(), "Failed to parse QR code data!", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), R.string.toast_scan_failed, Toast.LENGTH_LONG).show()
             e.printStackTrace()
         }
     }

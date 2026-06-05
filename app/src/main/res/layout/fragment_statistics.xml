@@ -27,7 +27,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Statistics"
+                android:text="@string/title_statistics"
                 android:textColor="@color/dark_accent"
                 android:textSize="26sp"
                 android:textStyle="bold" />
@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="Track your productivity and progress"
+                android:text="@string/subtitle_statistics"
                 android:textColor="@color/dark_accent"
                 android:alpha="0.8"
                 android:textSize="15sp" />
@@ -91,7 +91,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Completion"
+                            android:text="@string/label_completion"
                             android:textColor="@color/dark_accent"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -101,7 +101,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-                            android:text="Total Tasks: 0"
+                            android:text="@string/stats_total_default"
                             android:textColor="@color/dark_accent"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -111,7 +111,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="Completed: 0"
+                            android:text="@string/stats_completed_default"
                             android:textColor="@color/dark_accent"
                             android:textSize="14sp" />
 
@@ -120,7 +120,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="Pending: 0"
+                            android:text="@string/stats_pending_default"
                             android:textColor="@color/dark_accent"
                             android:textSize="14sp" />
 
@@ -148,7 +148,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="16dp"
-                        android:text="Category Breakdown"
+                        android:text="@string/title_category_breakdown"
                         android:textColor="@color/dark_accent"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -169,7 +169,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Work"
+                                android:text="@string/category_work"
                                 android:textColor="@color/dark_accent"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
@@ -178,7 +178,7 @@
                                 android:id="@+id/tv_work_ratio"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="0/0"
+                                tools:text="0/0"
                                 android:textColor="@color/dark_accent"
                                 android:textSize="13sp" />
                         </LinearLayout>
@@ -209,7 +209,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Personal"
+                                android:text="@string/category_personal"
                                 android:textColor="@color/dark_accent"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
@@ -218,7 +218,7 @@
                                 android:id="@+id/tv_personal_ratio"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="0/0"
+                                tools:text="0/0"
                                 android:textColor="@color/dark_accent"
                                 android:textSize="13sp" />
                         </LinearLayout>
@@ -249,7 +249,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Health"
+                                android:text="@string/category_health"
                                 android:textColor="@color/dark_accent"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
@@ -258,7 +258,7 @@
                                 android:id="@+id/tv_health_ratio"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="0/0"
+                                tools:text="0/0"
                                 android:textColor="@color/dark_accent"
                                 android:textSize="13sp" />
                         </LinearLayout>
@@ -288,7 +288,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Study"
+                                android:text="@string/category_study"
                                 android:textColor="@color/dark_accent"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
@@ -297,7 +297,7 @@
                                 android:id="@+id/tv_study_ratio"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="0/0"
+                                tools:text="0/0"
                                 android:textColor="@color/dark_accent"
                                 android:textSize="13sp" />
                         </LinearLayout>

@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="20dp"
-                android:text="Create New Task"
+                android:text="@string/title_create_task"
                 android:textColor="@color/dark_accent"
                 android:textSize="26sp"
                 android:textStyle="bold" />
@@ -48,7 +48,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Title"
+                        android:text="@string/label_title"
                         android:textColor="@color/dark_accent"
                         android:textSize="14sp"
                         android:textStyle="bold"
@@ -61,7 +61,7 @@
                         android:layout_marginTop="6dp"
                         android:layout_marginBottom="16dp"
                         android:background="@drawable/bg_edit_text"
-                        android:hint="Enter task title"
+                        android:hint="@string/hint_title"
                         android:textColorHint="#9e9e9e"
                         android:inputType="textCapSentences"
                         android:padding="12dp"
@@ -72,7 +72,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Description"
+                        android:text="@string/label_description"
                         android:textColor="@color/dark_accent"
                         android:textSize="14sp"
                         android:textStyle="bold"
@@ -85,7 +85,7 @@
                         android:layout_marginTop="6dp"
                         android:layout_marginBottom="16dp"
                         android:background="@drawable/bg_edit_text"
-                        android:hint="Enter task details..."
+                        android:hint="@string/hint_description"
                         android:textColorHint="#9e9e9e"
                         android:gravity="top"
                         android:inputType="textMultiLine|textCapSentences"
@@ -98,7 +98,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Category"
+                        android:text="@string/label_category"
                         android:textColor="@color/dark_accent"
                         android:textSize="14sp"
                         android:textStyle="bold"
@@ -125,7 +125,7 @@
                                 android:background="@drawable/bg_chip_selected"
                                 android:paddingHorizontal="14dp"
                                 android:paddingVertical="7dp"
-                                android:text="Work"
+                                android:text="@string/category_work"
                                 android:textColor="@color/white"
                                 android:textSize="13sp" />
 
@@ -137,7 +137,7 @@
                                 android:background="@drawable/bg_chip_unselected"
                                 android:paddingHorizontal="14dp"
                                 android:paddingVertical="7dp"
-                                android:text="Personal"
+                                android:text="@string/category_personal"
                                 android:textColor="@color/dark_accent"
                                 android:textSize="13sp" />
 
@@ -149,7 +149,7 @@
                                 android:background="@drawable/bg_chip_unselected"
                                 android:paddingHorizontal="14dp"
                                 android:paddingVertical="7dp"
-                                android:text="Health"
+                                android:text="@string/category_health"
                                 android:textColor="@color/dark_accent"
                                 android:textSize="13sp" />
 
@@ -160,7 +160,7 @@
                                 android:background="@drawable/bg_chip_unselected"
                                 android:paddingHorizontal="14dp"
                                 android:paddingVertical="7dp"
-                                android:text="Study"
+                                android:text="@string/category_study"
                                 android:textColor="@color/dark_accent"
                                 android:textSize="13sp" />
                         </LinearLayout>
@@ -170,7 +170,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Priority"
+                        android:text="@string/label_priority"
                         android:textColor="@color/dark_accent"
                         android:textSize="14sp"
                         android:textStyle="bold"
@@ -193,7 +193,7 @@
                             android:background="@drawable/bg_chip_unselected"
                             android:gravity="center"
                             android:paddingVertical="8dp"
-                            android:text="Low"
+                            android:text="@string/priority_low"
                             android:textColor="@color/dark_accent"
                             android:textSize="13sp" />
 
@@ -206,7 +206,7 @@
                             android:background="@drawable/bg_chip_selected"
                             android:gravity="center"
                             android:paddingVertical="8dp"
-                            android:text="Medium"
+                            android:text="@string/priority_medium"
                             android:textColor="@color/white"
                             android:textSize="13sp" />
 
@@ -219,7 +219,7 @@
                             android:background="@drawable/bg_chip_unselected"
                             android:gravity="center"
                             android:paddingVertical="8dp"
-                            android:text="High"
+                            android:text="@string/priority_high"
                             android:textColor="@color/dark_accent"
                             android:textSize="13sp" />
                     </LinearLayout>
@@ -228,7 +228,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Due Date"
+                        android:text="@string/label_due_date"
                         android:textColor="@color/dark_accent"
                         android:textSize="14sp"
                         android:textStyle="bold"
@@ -258,7 +258,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
-                            android:text="Select Date"
+                            android:text="@string/hint_due_date"
                             android:textColor="@color/dark_accent"
                             android:textSize="15sp" />
                     </LinearLayout>
@@ -277,7 +277,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Completed"
+                            android:text="@string/label_completed"
                             android:textColor="@color/dark_accent"
                             android:textSize="14sp"
                             android:textStyle="bold"
@@ -301,7 +301,7 @@
                 android:layout_height="54dp"
                 android:layout_marginTop="12dp"
                 android:backgroundTint="@color/dark_accent"
-                android:text="Save Task"
+                android:text="@string/btn_save"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -313,7 +313,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:layout_marginTop="10dp"
-                android:text="Share Task"
+                android:text="@string/btn_share"
                 android:textColor="@color/dark_accent"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -328,7 +328,7 @@
                 android:layout_height="54dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="40dp"
-                android:text="Delete Task"
+                android:text="@string/btn_delete"
                 android:textColor="#FFFF3B30"
                 android:textSize="16sp"
                 android:textStyle="bold"

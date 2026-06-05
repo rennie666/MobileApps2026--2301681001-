@@ -153,7 +153,7 @@ class TaskDetailFragment : Fragment() {
 
     private fun loadTaskData(task: Task?) {
         if (task != null) {
-            screenTitle.text = "Task Details"
+            screenTitle.text = getString(R.string.title_edit_task)
             editTitle.setText(task.title)
             editDesc.setText(task.description)
             selectCategory(task.category)
@@ -204,7 +204,7 @@ class TaskDetailFragment : Fragment() {
         val desc = editDesc.text.toString().trim()
 
         if (title.isEmpty()) {
-            Toast.makeText(requireContext(), "Title cannot be empty!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), R.string.toast_title_empty, Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -219,7 +219,7 @@ class TaskDetailFragment : Fragment() {
             )
             task?.let {
                 viewModel.updateTask(it)
-                Toast.makeText(requireContext(), "Task updated successfully!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), R.string.toast_task_updated, Toast.LENGTH_SHORT).show()
             }
         } else {
             val task = Task(
@@ -232,7 +232,7 @@ class TaskDetailFragment : Fragment() {
                 dueDate = selectedDate
             )
             viewModel.insertTask(task)
-            Toast.makeText(requireContext(), "Task created successfully!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), R.string.toast_task_created, Toast.LENGTH_SHORT).show()
         }
 
         findNavController().navigateUp()
@@ -241,23 +241,23 @@ class TaskDetailFragment : Fragment() {
     private fun deleteTask() {
         currentTask?.let {
             viewModel.deleteTask(it)
-            Toast.makeText(requireContext(), "Task deleted!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), R.string.toast_task_deleted, Toast.LENGTH_SHORT).show()
             findNavController().navigateUp()
         }
     }
 
     private fun shareTask() {
         currentTask?.let { task ->
-            val shareText = """
-                📋 Task details from Tracker App:
-                
-                📌 Title: ${task.title}
-                📝 Description: ${task.description}
-                🏷️ Category: ${task.category}
-                ⚠️ Priority: ${task.priority}
-                📅 Due Date: ${task.dueDate}
-                Status: ${if (task.isCompleted) "Completed" else "Pending"}
-            """.trimIndent()
+            val status = if (task.isCompleted) getString(R.string.status_completed) else getString(R.string.status_pending)
+            val shareText = getString(
+                R.string.share_task_template,
+                task.title,
+                task.description,
+                task.category,
+                task.priority,
+                task.dueDate,
+                status
+            )
 
             val sendIntent = Intent().apply {
                 action = Intent.ACTION_SEND
@@ -265,7 +265,7 @@ class TaskDetailFragment : Fragment() {
                 type = "text/plain"
             }
 
-            val shareIntent = Intent.createChooser(sendIntent, "Share Task via")
+            val shareIntent = Intent.createChooser(sendIntent, getString(R.string.share_task_via))
             startActivity(shareIntent)
         }
     }

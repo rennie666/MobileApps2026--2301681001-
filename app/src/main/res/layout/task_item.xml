@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="4dp"
@@ -46,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="Task Title"
+                tools:text="Task Title"
                 android:textColor="@color/dark_accent"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -58,7 +59,7 @@
                 android:layout_marginTop="4dp"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="Task description details go here..."
+                tools:text="Task description details go here..."
                 android:textColor="@color/dark_accent"
                 android:alpha="0.6"
                 android:textSize="13sp" />
@@ -83,7 +84,7 @@
                 android:background="@drawable/bg_badge_mint"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="4dp"
-                android:text="Work"
+                tools:text="Work"
                 android:textColor="@color/dark_accent"
                 android:textSize="11sp"
                 android:textStyle="bold" />
@@ -107,7 +108,7 @@
                     android:id="@+id/task_due_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Jun 10"
+                    tools:text="Jun 10"
                     android:textColor="@color/dark_accent"
                     android:alpha="0.7"
                     android:textSize="12sp" />

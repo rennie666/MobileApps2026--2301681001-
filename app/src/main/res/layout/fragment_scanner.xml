@@ -27,7 +27,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="QR Scanner"
+                android:text="@string/title_scanner"
                 android:textColor="@color/dark_accent"
                 android:textSize="26sp"
                 android:textStyle="bold" />
@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="Import tasks from QR codes"
+                android:text="@string/subtitle_scanner"
                 android:textColor="@color/dark_accent"
                 android:alpha="0.8"
                 android:textSize="15sp" />
@@ -80,7 +80,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Camera Scan Required"
+                    android:text="@string/scanner_card_title"
                     android:textColor="@color/dark_accent"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -90,7 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
-                    android:text="Point your camera at a task planner QR code. The app will automatically parse the QR data and import it as a new task."
+                    android:text="@string/scanner_card_desc"
                     android:textColor="@color/dark_accent"
                     android:alpha="0.7"
                     android:textSize="14sp" />
@@ -103,7 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:backgroundTint="@color/dark_accent"
-            android:text="Start QR Scan"
+            android:text="@string/btn_start_scan"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
