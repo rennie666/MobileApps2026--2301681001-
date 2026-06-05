@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light">
+
+    <!-- Scrollable content area -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Title Header -->
+            <TextView
+                android:id="@+id/screen_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="20dp"
+                android:text="Create New Task"
+                android:textColor="@color/dark_accent"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <!-- Main card for input fields -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Title Input -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Title"
+                        android:textColor="@color/dark_accent"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:alpha="0.8" />
+
+                    <EditText
+                        android:id="@+id/edit_task_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/bg_edit_text"
+                        android:hint="Enter task title"
+                        android:textColorHint="#9e9e9e"
+                        android:inputType="textCapSentences"
+                        android:padding="12dp"
+                        android:textColor="@color/dark_accent"
+                        android:textSize="15sp" />
+
+                    <!-- Description Input -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:textColor="@color/dark_accent"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:alpha="0.8" />
+
+                    <EditText
+                        android:id="@+id/edit_task_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/bg_edit_text"
+                        android:hint="Enter task details..."
+                        android:textColorHint="#9e9e9e"
+                        android:gravity="top"
+                        android:inputType="textMultiLine|textCapSentences"
+                        android:minLines="3"
+                        android:padding="12dp"
+                        android:textColor="@color/dark_accent"
+                        android:textSize="15sp" />
+
+                    <!-- Category Selector -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Category"
+                        android:textColor="@color/dark_accent"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:alpha="0.8" />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="16dp"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:id="@+id/category_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/detail_chip_work"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/bg_chip_selected"
+                                android:paddingHorizontal="14dp"
+                                android:paddingVertical="7dp"
+                                android:text="Work"
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:id="@+id/detail_chip_personal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/bg_chip_unselected"
+                                android:paddingHorizontal="14dp"
+                                android:paddingVertical="7dp"
+                                android:text="Personal"
+                                android:textColor="@color/dark_accent"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:id="@+id/detail_chip_health"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:background="@drawable/bg_chip_unselected"
+                                android:paddingHorizontal="14dp"
+                                android:paddingVertical="7dp"
+                                android:text="Health"
+                                android:textColor="@color/dark_accent"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:id="@+id/detail_chip_study"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_chip_unselected"
+                                android:paddingHorizontal="14dp"
+                                android:paddingVertical="7dp"
+                                android:text="Study"
+                                android:textColor="@color/dark_accent"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <!-- Priority Selector -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Priority"
+                        android:textColor="@color/dark_accent"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:alpha="0.8" />
+
+                    <LinearLayout
+                        android:id="@+id/priority_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/priority_low"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="6dp"
+                            android:background="@drawable/bg_chip_unselected"
+                            android:gravity="center"
+                            android:paddingVertical="8dp"
+                            android:text="Low"
+                            android:textColor="@color/dark_accent"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/priority_medium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginHorizontal="3dp"
+                            android:background="@drawable/bg_chip_selected"
+                            android:gravity="center"
+                            android:paddingVertical="8dp"
+                            android:text="Medium"
+                            android:textColor="@color/white"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/priority_high"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="6dp"
+                            android:background="@drawable/bg_chip_unselected"
+                            android:gravity="center"
+                            android:paddingVertical="8dp"
+                            android:text="High"
+                            android:textColor="@color/dark_accent"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <!-- Due Date Selection -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Due Date"
+                        android:textColor="@color/dark_accent"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:alpha="0.8" />
+
+                    <LinearLayout
+                        android:id="@+id/btn_pick_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/bg_edit_text"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/ic_menu_my_calendar"
+                            app:tint="@color/dark_accent" />
+
+                        <TextView
+                            android:id="@+id/tv_due_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="Select Date"
+                            android:textColor="@color/dark_accent"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <!-- Completion Switch (shown in edit mode) -->
+                    <LinearLayout
+                        android:id="@+id/completion_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Completed"
+                            android:textColor="@color/dark_accent"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:alpha="0.8" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/switch_completed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:thumbTint="@color/dark_accent"
+                            app:trackTint="#c5c5c5" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Save and Delete Buttons -->
+            <Button
+                android:id="@+id/btn_save_task"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/dark_accent"
+                android:text="Save Task"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="16dp" />
+
+            <Button
+                android:id="@+id/btn_delete_task"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:text="Delete Task"
+                android:textColor="#FFFF3B30"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:cornerRadius="16dp"
+                app:strokeColor="#FFFF3B30" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:backgroundTint="@color/white"
+        app:itemIconTint="@color/dark_accent"
+        app:itemTextColor="@color/dark_accent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
