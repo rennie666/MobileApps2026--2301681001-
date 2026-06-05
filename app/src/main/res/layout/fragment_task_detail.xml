@@ -294,7 +294,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Save and Delete Buttons -->
+            <!-- Save, Share and Delete Buttons -->
             <Button
                 android:id="@+id/btn_save_task"
                 android:layout_width="match_parent"
@@ -306,6 +306,20 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:cornerRadius="16dp" />
+
+            <Button
+                android:id="@+id/btn_share_task"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="10dp"
+                android:text="Share Task"
+                android:textColor="@color/dark_accent"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:cornerRadius="16dp"
+                app:strokeColor="@color/dark_accent" />
 
             <Button
                 android:id="@+id/btn_delete_task"

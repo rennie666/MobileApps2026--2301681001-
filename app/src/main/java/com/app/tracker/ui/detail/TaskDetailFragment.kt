@@ -18,6 +18,7 @@ import androidx.navigation.fragment.findNavController
 import com.app.tracker.R
 import com.app.tracker.di.ServiceLocator
 import com.app.tracker.model.Task
+import android.content.Intent
 import com.app.tracker.ui.viewmodel.TaskViewModel
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -40,6 +41,7 @@ class TaskDetailFragment : Fragment() {
     private lateinit var switchCompleted: SwitchCompat
     private lateinit var btnSave: Button
     private lateinit var btnDelete: Button
+    private lateinit var btnShare: Button
 
     // Selection states
     private var selectedCategory = "Work"
@@ -82,6 +84,7 @@ class TaskDetailFragment : Fragment() {
         switchCompleted = view.findViewById(R.id.switch_completed)
         btnSave = view.findViewById(R.id.btn_save_task)
         btnDelete = view.findViewById(R.id.btn_delete_task)
+        btnShare = view.findViewById(R.id.btn_share_task)
 
         // Setup Category chips mapping
         categoryChips = mapOf(
@@ -129,9 +132,10 @@ class TaskDetailFragment : Fragment() {
             ).show()
         }
 
-        // Save and Delete action listeners
+        // Save, Share and Delete action listeners
         btnSave.setOnClickListener { saveTask() }
         btnDelete.setOnClickListener { deleteTask() }
+        btnShare.setOnClickListener { shareTask() }
 
         // Load task data if edit mode
         if (isEditMode) {
@@ -161,6 +165,7 @@ class TaskDetailFragment : Fragment() {
             switchCompleted.isChecked = task.isCompleted
 
             btnDelete.visibility = View.VISIBLE
+            btnShare.visibility = View.VISIBLE
         }
     }
 
@@ -238,6 +243,30 @@ class TaskDetailFragment : Fragment() {
             viewModel.deleteTask(it)
             Toast.makeText(requireContext(), "Task deleted!", Toast.LENGTH_SHORT).show()
             findNavController().navigateUp()
+        }
+    }
+
+    private fun shareTask() {
+        currentTask?.let { task ->
+            val shareText = """
+                📋 Task details from Tracker App:
+                
+                📌 Title: ${task.title}
+                📝 Description: ${task.description}
+                🏷️ Category: ${task.category}
+                ⚠️ Priority: ${task.priority}
+                📅 Due Date: ${task.dueDate}
+                Status: ${if (task.isCompleted) "Completed" else "Pending"}
+            """.trimIndent()
+
+            val sendIntent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, shareText)
+                type = "text/plain"
+            }
+
+            val shareIntent = Intent.createChooser(sendIntent, "Share Task via")
+            startActivity(shareIntent)
         }
     }
 }
