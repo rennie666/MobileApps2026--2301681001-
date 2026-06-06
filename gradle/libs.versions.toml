@@ -11,7 +11,7 @@ constraintlayout = "2.2.1"
 room = "2.8.4"
 navigation = "2.8.5"
 zxing = "4.3.0"
-kotlin = "1.9.24"
+kotlin = "2.2.10"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }

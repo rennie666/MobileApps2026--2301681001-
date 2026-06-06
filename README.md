@@ -27,13 +27,12 @@ Task Planner е Android приложение за организиране, мо
 ## Технологии
 | Технология | Версия | Използване |
 | :--- | :--- | :--- |
-| **Kotlin** | 1.9.x / 2.0.x | Основен език на приложението |
-| **Material 3** | 1.2.0 | Модерни UI компоненти, карти и микроанимации |
-| **Navigation Component** | 2.7.x | Навигация между фрагментите в Single Activity |
-| **ViewModel + Flow** | 2.6.x | Управление на архитектурния state и реактивни потоци |
-| **Room** | 2.6.x | Локална SQLite база данни (Offline-first) |
-| **Coroutines** | 1.7.x | Асинхронна фонова работа (`Dispatchers.IO`) |
-| **ZXing / CameraX** | 3.5.x | Сканиране и разчитане на QR кодове през камерата |
+| **Kotlin** | 2.2.10 | Основен език  |
+| **Material 3** | 1.13.0 | UI компоненти |
+| **Navigation Component** | 2.8.5 | Навигация |
+| **ViewModel + Flow** | 2.8.5. | Управление на архитектурния state и реактивни потоци |
+| **Room** | 2.8.4 | Локална SQLite база данни (Offline-first) |
+| **ZXing / CameraX** | 4.3.0 | Сканиране и разчитане на QR кодове през камерата |
 
 ## Основни функционалности
 * Пълен CRUD мениджмънт на задачи (заглавие, описание, категории, приоритети, краен срок)
@@ -82,10 +81,12 @@ Room се използва чрез DAO интерфейс:
   ```bash
   gradlew connectedAndroidTest
 
-## Скрийншотове 
-Начален екран (Списък)
-Детайли за задача
-Страница със статистики
+
+## Скрийншотове
+
+| ![Home Screen](./screenshots/home.png) | ![Statistics Screen](./screenshots/stats.png) | ![QR Screen](./screenshots/qr.png) |
+| :---: | :---: | :---: |
+| ![Create Task Screen](./screenshots/create_task.png) | ![Details Screen](./screenshots/details.png) | ![Share Screen](./screenshots/share.png)
 
 ## APK
 Компилираният готов файл за инсталация може да бъде намерен и изтеглен директно от:app-release.apk
