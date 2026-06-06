@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/share_dialog_title"
+            android:textColor="@color/dark_accent"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- QR Code Container Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="3dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardUseCompatPadding="true"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/iv_share_qr"
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+                android:padding="16dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="QR Code" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Subtitle / Instruction -->
+        <TextView
+            android:id="@+id/dialog_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/share_dialog_qr_subtitle"
+            android:textColor="@color/dark_accent"
+            android:alpha="0.75"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.2"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Actions Container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Share as Text Button -->
+            <Button
+                android:id="@+id/btn_share_text"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/dark_accent"
+                android:text="@string/btn_share_as_text"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Close Button -->
+            <Button
+                android:id="@+id/btn_close"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/btn_close"
+                android:textColor="@color/dark_accent"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

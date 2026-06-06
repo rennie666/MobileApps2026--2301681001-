@@ -23,6 +23,12 @@ import com.app.tracker.ui.viewmodel.TaskViewModel
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
+import android.graphics.Bitmap
+import android.widget.ImageView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.journeyapps.barcodescanner.BarcodeEncoder
+import com.google.zxing.BarcodeFormat
+import org.json.JSONObject
 
 class TaskDetailFragment : Fragment() {
 
@@ -248,25 +254,85 @@ class TaskDetailFragment : Fragment() {
 
     private fun shareTask() {
         currentTask?.let { task ->
-            val status = if (task.isCompleted) getString(R.string.status_completed) else getString(R.string.status_pending)
-            val shareText = getString(
-                R.string.share_task_template,
-                task.title,
-                task.description,
-                task.category,
-                task.priority,
-                task.dueDate,
-                status
-            )
-
-            val sendIntent = Intent().apply {
-                action = Intent.ACTION_SEND
-                putExtra(Intent.EXTRA_TEXT, shareText)
-                type = "text/plain"
+            // 1. Generate JSON for QR Code
+            val taskJson = JSONObject().apply {
+                put("title", task.title)
+                put("description", task.description)
+                put("category", task.category)
+                put("priority", task.priority)
+                put("dueDate", task.dueDate)
             }
+            val qrText = taskJson.toString()
 
-            val shareIntent = Intent.createChooser(sendIntent, getString(R.string.share_task_via))
-            startActivity(shareIntent)
+            // 2. Generate Bitmap
+            val qrBitmap = generateQRCode(qrText)
+
+            if (qrBitmap != null) {
+                showShareDialog(task, qrBitmap)
+            } else {
+                Toast.makeText(requireContext(), R.string.error_qr_generation, Toast.LENGTH_SHORT).show()
+                // Fallback to text sharing directly
+                shareAsText(task)
+            }
         }
+    }
+
+    private fun generateQRCode(text: String): Bitmap? {
+        return try {
+            val barcodeEncoder = BarcodeEncoder()
+            barcodeEncoder.encodeBitmap(text, BarcodeFormat.QR_CODE, 512, 512)
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
+        }
+    }
+
+    private fun showShareDialog(task: Task, qrBitmap: Bitmap) {
+        val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_share_qr, null)
+        val ivQr = dialogView.findViewById<ImageView>(R.id.iv_share_qr)
+        val btnShareText = dialogView.findViewById<Button>(R.id.btn_share_text)
+        val btnClose = dialogView.findViewById<Button>(R.id.btn_close)
+
+        ivQr.setImageBitmap(qrBitmap)
+
+        val dialog = MaterialAlertDialogBuilder(requireContext())
+            .setView(dialogView)
+            .create()
+
+        // Set transparent window background so CardView root corners are rounded beautifully
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+        btnShareText.setOnClickListener {
+            dialog.dismiss()
+            shareAsText(task)
+        }
+
+        btnClose.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
+    }
+
+    private fun shareAsText(task: Task) {
+        val status = if (task.isCompleted) getString(R.string.status_completed) else getString(R.string.status_pending)
+        val shareText = getString(
+            R.string.share_task_template,
+            task.title,
+            task.description,
+            task.category,
+            task.priority,
+            task.dueDate,
+            status
+        )
+
+        val sendIntent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, shareText)
+            type = "text/plain"
+        }
+
+        val shareIntent = Intent.createChooser(sendIntent, getString(R.string.share_task_via))
+        startActivity(shareIntent)
     }
 }

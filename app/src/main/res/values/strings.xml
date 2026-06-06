@@ -85,4 +85,11 @@
     <string name="stats_completed">Completed: %1$d</string>
     <string name="stats_pending">Pending: %1$d</string>
     <string name="stats_ratio_format">%1$d / %2$d</string>
+
+    <!-- Task Sharing Dialog -->
+    <string name="share_dialog_title">Share Task</string>
+    <string name="share_dialog_qr_subtitle">Let another user scan this QR code with their Tracker app to import this task.</string>
+    <string name="btn_share_as_text">Share as Text</string>
+    <string name="btn_close">Close</string>
+    <string name="error_qr_generation">Failed to generate QR Code</string>
 </resources>
