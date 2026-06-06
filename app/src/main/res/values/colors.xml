@@ -2,8 +2,31 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="bg_light">#F4F6F9</color> <!-- Светлият сивкав фон -->
-    <color name="purple_banner">#E2D4F0</color> <!-- Светло лилавия банер -->
-    <color name="dark_accent">#121212</color> <!-- Черното за бутоните и менюто -->
-    <color name="mint_card">#D7EBE5</color> <!-- Ментовото за някои карти -->
+    <color name="bg_light">#F4F6F9</color> <!-- Light grayish screen background -->
+    <color name="purple_banner">#E2D4F0</color> <!-- Pinned light purple top banner -->
+    <color name="dark_accent">#121212</color> <!-- Primary text and action color -->
+    <color name="mint_card">#D7EBE5</color> <!-- Pinned mint green statistics card -->
+
+    <!-- Widget Specific Custom Colors -->
+    <color name="bg_edit_text">#FFF9FAFC</color>
+    <color name="border_edit_text">#FFE2E8F0</color>
+    <color name="border_chip_unselected">#FFE0E0E0</color>
+    <color name="ring_background">#E5E9F0</color>
+    <color name="text_hint">#9E9E9E</color>
+    <color name="switch_track">#C5C5C5</color>
+
+    <!-- Priorities -->
+    <color name="priority_high">#FFFF3B30</color>
+    <color name="priority_medium">#FFFF9500</color>
+    <color name="priority_low">#FF34C759</color>
+
+    <!-- Category Badges Light -->
+    <color name="work_bg">#E2D4F0</color>
+    <color name="work_text">#5B21B6</color>
+    <color name="personal_bg">#D7EBE5</color>
+    <color name="personal_text">#0F766E</color>
+    <color name="health_bg">#FFEBEB</color>
+    <color name="health_text">#B91C1C</color>
+    <color name="study_bg">#FEF3C7</color>
+    <color name="study_text">#B45309</color>
 </resources>

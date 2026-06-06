@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#1E1E1E</color> <!-- Dark gray surface color for cards/widgets -->
+    <color name="bg_light">#121212</color> <!-- Pure dark surface screen background -->
+    <color name="purple_banner">#8c7abc</color> <!-- Deep purple banner background -->
+    <color name="dark_accent">#F4F6F9</color> <!-- Off-white primary text and icon tint -->
+    <color name="mint_card">#51ae99</color> <!-- Deep teal green progress card background -->
+
+    <!-- Widget Specific Custom Colors -->
+    <color name="bg_edit_text">#252525</color>
+    <color name="border_edit_text">#383838</color>
+    <color name="border_chip_unselected">#383838</color>
+    <color name="ring_background">#303030</color>
+    <color name="text_hint">#7A7A7A</color>
+    <color name="switch_track">#424242</color>
+
+    <!-- Priorities -->
+    <color name="priority_high">#EF4444</color>
+    <color name="priority_medium">#F59E0B</color>
+    <color name="priority_low">#10B981</color>
+
+    <!-- Category Badges Dark -->
+    <color name="work_bg">#2D1F3D</color>
+    <color name="work_text">#C084FC</color>
+    <color name="personal_bg">#112E27</color>
+    <color name="personal_text">#2DD4BF</color>
+    <color name="health_bg">#3F1A1A</color>
+    <color name="health_text">#F87171</color>
+    <color name="study_bg">#3C2B11</color>
+    <color name="study_text">#FBBF24</color>
+</resources>

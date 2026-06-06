@@ -77,8 +77,9 @@ class StatisticsFragment : Fragment() {
         pbStudy = view.findViewById(R.id.pb_study)
 
         // Apply visual styling tints
-        val tintColor = ColorStateList.valueOf(Color.parseColor("#121212")) // dark_accent
-        val bgTintColor = ColorStateList.valueOf(Color.parseColor("#EAECEF"))
+        val context = requireContext()
+        val tintColor = ColorStateList.valueOf(androidx.core.content.ContextCompat.getColor(context, R.color.dark_accent))
+        val bgTintColor = ColorStateList.valueOf(androidx.core.content.ContextCompat.getColor(context, R.color.ring_background))
 
         val progressBars = listOf(pbWork, pbPersonal, pbHealth, pbStudy)
         for (pb in progressBars) {

@@ -62,7 +62,7 @@
                         android:layout_marginBottom="16dp"
                         android:background="@drawable/bg_edit_text"
                         android:hint="@string/hint_title"
-                        android:textColorHint="#9e9e9e"
+                        android:textColorHint="@color/text_hint"
                         android:inputType="textCapSentences"
                         android:padding="12dp"
                         android:textColor="@color/dark_accent"
@@ -86,7 +86,7 @@
                         android:layout_marginBottom="16dp"
                         android:background="@drawable/bg_edit_text"
                         android:hint="@string/hint_description"
-                        android:textColorHint="#9e9e9e"
+                        android:textColorHint="@color/text_hint"
                         android:gravity="top"
                         android:inputType="textMultiLine|textCapSentences"
                         android:minLines="3"
@@ -288,7 +288,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:thumbTint="@color/dark_accent"
-                            app:trackTint="#c5c5c5" />
+                            app:trackTint="@color/switch_track" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -329,12 +329,12 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="40dp"
                 android:text="@string/btn_delete"
-                android:textColor="#FFFF3B30"
+                android:textColor="@color/priority_high"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:visibility="gone"
                 app:cornerRadius="16dp"
-                app:strokeColor="#FFFF3B30" />
+                app:strokeColor="@color/priority_high" />
 
         </LinearLayout>
     </ScrollView>

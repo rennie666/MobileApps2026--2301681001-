@@ -177,14 +177,17 @@ class TaskDetailFragment : Fragment() {
 
     private fun selectCategory(category: String) {
         selectedCategory = category
+        val context = requireContext()
+        val textColorSelected = androidx.core.content.ContextCompat.getColor(context, R.color.white)
+        val textColorUnselected = androidx.core.content.ContextCompat.getColor(context, R.color.dark_accent)
         for ((catName, chip) in categoryChips) {
             if (catName.lowercase() == category.lowercase()) {
                 chip.setBackgroundResource(R.drawable.bg_chip_selected)
-                chip.setTextColor(Color.WHITE)
+                chip.setTextColor(textColorSelected)
                 chip.setTypeface(null, android.graphics.Typeface.BOLD)
             } else {
                 chip.setBackgroundResource(R.drawable.bg_chip_unselected)
-                chip.setTextColor(Color.parseColor("#121212"))
+                chip.setTextColor(textColorUnselected)
                 chip.setTypeface(null, android.graphics.Typeface.NORMAL)
             }
         }
@@ -192,14 +195,17 @@ class TaskDetailFragment : Fragment() {
 
     private fun selectPriority(priority: String) {
         selectedPriority = priority
+        val context = requireContext()
+        val textColorSelected = androidx.core.content.ContextCompat.getColor(context, R.color.white)
+        val textColorUnselected = androidx.core.content.ContextCompat.getColor(context, R.color.dark_accent)
         for ((priName, chip) in priorityChips) {
             if (priName.lowercase() == priority.lowercase()) {
                 chip.setBackgroundResource(R.drawable.bg_chip_selected)
-                chip.setTextColor(Color.WHITE)
+                chip.setTextColor(textColorSelected)
                 chip.setTypeface(null, android.graphics.Typeface.BOLD)
             } else {
                 chip.setBackgroundResource(R.drawable.bg_chip_unselected)
-                chip.setTextColor(Color.parseColor("#121212"))
+                chip.setTextColor(textColorUnselected)
                 chip.setTypeface(null, android.graphics.Typeface.NORMAL)
             }
         }

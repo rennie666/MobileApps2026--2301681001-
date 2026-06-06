@@ -9,6 +9,8 @@ import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 import android.view.animation.DecelerateInterpolator
+import androidx.core.content.ContextCompat
+import com.app.tracker.R
 
 class TaskProgressRingView @JvmOverloads constructor(
     context: Context,
@@ -21,37 +23,40 @@ class TaskProgressRingView @JvmOverloads constructor(
     private var maxProgress: Float = 100f
     private var strokeWidth: Float = 24f
 
-    // Colors
-    private val backgroundRingColor = Color.parseColor("#E5E9F0")
-    private val activeRingColor = Color.parseColor("#121212") // dark_accent
-    private val textColor = Color.parseColor("#121212")
-
-    // Paints
-    private val backgroundPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = backgroundRingColor
-        style = Paint.Style.STROKE
-        this.strokeWidth = this@TaskProgressRingView.strokeWidth
-        strokeCap = Paint.Cap.ROUND
+    // Paints initialized lazily so they read the correct theme colors after context is initialized
+    private val backgroundPaint by lazy {
+        Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            color = ContextCompat.getColor(context, R.color.ring_background)
+            style = Paint.Style.STROKE
+            this.strokeWidth = this@TaskProgressRingView.strokeWidth
+            strokeCap = Paint.Cap.ROUND
+        }
     }
 
-    private val activePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = activeRingColor
-        style = Paint.Style.STROKE
-        this.strokeWidth = this@TaskProgressRingView.strokeWidth
-        strokeCap = Paint.Cap.ROUND
+    private val activePaint by lazy {
+        Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            color = ContextCompat.getColor(context, R.color.dark_accent)
+            style = Paint.Style.STROKE
+            this.strokeWidth = this@TaskProgressRingView.strokeWidth
+            strokeCap = Paint.Cap.ROUND
+        }
     }
 
-    private val textPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = textColor
-        textAlign = Paint.Align.CENTER
-        textSize = 64f
-        isFakeBoldText = true
+    private val textPaint by lazy {
+        Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            color = ContextCompat.getColor(context, R.color.dark_accent)
+            textAlign = Paint.Align.CENTER
+            textSize = 64f
+            isFakeBoldText = true
+        }
     }
 
-    private val labelPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.parseColor("#707070")
-        textAlign = Paint.Align.CENTER
-        textSize = 28f
+    private val labelPaint by lazy {
+        Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            color = ContextCompat.getColor(context, R.color.text_hint)
+            textAlign = Paint.Align.CENTER
+            textSize = 28f
+        }
     }
 
     private val rectF = RectF()

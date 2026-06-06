@@ -85,25 +85,27 @@ class TaskAdapter(
         }
 
         private fun setupPriorityDot(priority: String) {
-            val colorStr = when (priority.lowercase()) {
-                "high" -> "#FFFF3B30" // Red
-                "medium" -> "#FFFF9500" // Orange
-                else -> "#FF34C759" // Green for low/default
+            val colorRes = when (priority.lowercase()) {
+                "high" -> R.color.priority_high
+                "medium" -> R.color.priority_medium
+                else -> R.color.priority_low
             }
-            priorityDot.backgroundTintList = ColorStateList.valueOf(Color.parseColor(colorStr))
+            val context = priorityDot.context
+            priorityDot.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(context, colorRes))
         }
 
         private fun setupCategoryBadge(category: String) {
-            val (bgColorStr, textColorStr) = when (category.lowercase()) {
-                "work" -> Pair("#E2D4F0", "#5B21B6") // Soft purple background, deep purple text
-                "personal" -> Pair("#D7EBE5", "#0F766E") // Mint background, deep teal text
-                "health" -> Pair("#FFEBEB", "#B91C1C") // Soft red background, deep red text
-                "study" -> Pair("#FEF3C7", "#B45309") // Soft amber background, deep amber text
-                else -> Pair("#E2E8F0", "#334155") // Gray
+            val (bgColorRes, textColorRes) = when (category.lowercase()) {
+                "work" -> Pair(R.color.work_bg, R.color.work_text)
+                "personal" -> Pair(R.color.personal_bg, R.color.personal_text)
+                "health" -> Pair(R.color.health_bg, R.color.health_text)
+                "study" -> Pair(R.color.study_bg, R.color.study_text)
+                else -> Pair(R.color.bg_light, R.color.dark_accent)
             }
 
-            categoryBadge.backgroundTintList = ColorStateList.valueOf(Color.parseColor(bgColorStr))
-            categoryBadge.setTextColor(Color.parseColor(textColorStr))
+            val context = categoryBadge.context
+            categoryBadge.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(context, bgColorRes))
+            categoryBadge.setTextColor(ContextCompat.getColor(context, textColorRes))
         }
 
         private fun formatDate(dateStr: String): String {
