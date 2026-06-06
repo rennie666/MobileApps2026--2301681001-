@@ -87,6 +87,7 @@ Room се използва чрез DAO интерфейс:
 | ![Home Screen](./screenshots/home.png) | ![Statistics Screen](./screenshots/stats.png) | ![QR Scan Screen](./screenshots/qr_scan.png) | ![Create Task Screen](./screenshots/create_task.png) |
 | :---: | :---: | :---: | :---: |
 | ![Details Screen](./screenshots/details.png) | ![Details1 Screen](./screenshots/details1.png) | ![QR Screen](./screenshots/qr.png) | ![Share Screen](./screenshots/share.png)
+| ![Dark Home Screen](./screenshots/home_dark.png) | ![Dark Statistics Screen](./screenshots/stats_dark.png) | ![Dark QR Scan Screen](./screenshots/qr_scan_dark.png) | ![Dark Details Screen](./screenshots/details_dark.png) |
 
 ## APK
 Компилираният готов файл за инсталация може да бъде намерен и изтеглен директно от:app-release.apk

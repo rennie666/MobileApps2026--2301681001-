@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-    <color name="white">#1E1E1E</color> <!-- Dark gray surface color for cards/widgets -->
-    <color name="bg_light">#121212</color> <!-- Pure dark surface screen background -->
-    <color name="purple_banner">#8c7abc</color> <!-- Deep purple banner background -->
-    <color name="dark_accent">#F4F6F9</color> <!-- Off-white primary text and icon tint -->
-    <color name="mint_card">#51ae99</color> <!-- Deep teal green progress card background -->
+    <color name="white">#1E1E1E</color>
+    <color name="bg_light">#121212</color>
+    <color name="purple_banner">#8c7abc</color>
+    <color name="dark_accent">#F4F6F9</color>
+    <color name="mint_card">#51ae99</color>
 
     <!-- Widget Specific Custom Colors -->
     <color name="bg_edit_text">#252525</color>

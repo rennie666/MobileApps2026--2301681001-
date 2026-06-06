@@ -2,10 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="bg_light">#F4F6F9</color> <!-- Light grayish screen background -->
-    <color name="purple_banner">#E2D4F0</color> <!-- Pinned light purple top banner -->
-    <color name="dark_accent">#121212</color> <!-- Primary text and action color -->
-    <color name="mint_card">#D7EBE5</color> <!-- Pinned mint green statistics card -->
+    <color name="bg_light">#F4F6F9</color>
+    <color name="purple_banner">#E2D4F0</color>
+    <color name="dark_accent">#121212</color>
+    <color name="mint_card">#D7EBE5</color>
 
     <!-- Widget Specific Custom Colors -->
     <color name="bg_edit_text">#FFF9FAFC</color>
