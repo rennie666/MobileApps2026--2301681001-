@@ -90,13 +90,25 @@ class TaskListFragment : Fragment() {
         // Observe Room LiveData from ViewModel
         viewModel.allTasks.observe(viewLifecycleOwner) { tasks ->
             cachedTasks = tasks
-            filterAndDisplayTasks(tasks)
             updateSummary(tasks)
+        }
+
+        viewModel.filteredTasks.observe(viewLifecycleOwner) { filteredTasks ->
+            adapter.updateTasks(filteredTasks)
+            if (filteredTasks.isEmpty()) {
+                recyclerView.visibility = View.GONE
+                emptyStateView.visibility = View.VISIBLE
+            } else {
+                recyclerView.visibility = View.VISIBLE
+                emptyStateView.visibility = View.GONE
+            }
         }
     }
 
     private fun selectCategory(category: String) {
         selectedCategory = category
+        viewModel.updateFilter(category)
+        
         val context = requireContext()
         val textColorSelected = androidx.core.content.ContextCompat.getColor(context, R.color.white)
         val textColorUnselected = androidx.core.content.ContextCompat.getColor(context, R.color.dark_accent)
@@ -112,25 +124,6 @@ class TaskListFragment : Fragment() {
                 chip.setTextColor(textColorUnselected)
                 chip.setTypeface(null, android.graphics.Typeface.NORMAL)
             }
-        }
-        filterAndDisplayTasks(cachedTasks)
-    }
-
-    private fun filterAndDisplayTasks(allTasks: List<Task>) {
-        val filtered = if (selectedCategory == "All") {
-            allTasks
-        } else {
-            allTasks.filter { it.category.lowercase() == selectedCategory.lowercase() }
-        }
-
-        adapter.updateTasks(filtered)
-
-        if (filtered.isEmpty()) {
-            recyclerView.visibility = View.GONE
-            emptyStateView.visibility = View.VISIBLE
-        } else {
-            recyclerView.visibility = View.VISIBLE
-            emptyStateView.visibility = View.GONE
         }
     }
 
