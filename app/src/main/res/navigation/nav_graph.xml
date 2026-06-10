@@ -3,7 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
+<<<<<<< Updated upstream
     app:startDestination="@id/taskListFragment">
+=======
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.app.tracker.ui.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_detail"
+        android:name="com.app.tracker.ui.TaskDetailFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_task_detail" />
+
+    <fragment
+        android:id="@+id/navigation_stats"
+        android:name="com.app.tracker.ui.StatsFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_stats" />
+
+>>>>>>> Stashed changes
 
     <fragment
         android:id="@+id/taskListFragment"

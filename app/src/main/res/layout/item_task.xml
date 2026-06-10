@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="20dp"
+    app:cardBackgroundColor="@color/mint_card"
+    app:strokeWidth="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/ivTaskIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@android:drawable/ic_menu_edit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTaskTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Website Design"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/ivEditTask"
+            app:layout_constraintStart_toEndOf="@+id/ivTaskIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTaskStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="● Ongoing"
+            android:textColor="#557A70"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/tvTaskTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvTaskTitle" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipPriority"
+            style="@style/Widget.Material3.Chip.Suggestion"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginStart="12dp"
+            android:text="High"
+            app:chipMinHeight="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTaskStatus"
+            app:layout_constraintStart_toEndOf="@+id/tvTaskStatus"
+            app:layout_constraintTop_toTopOf="@+id/tvTaskStatus" />
+
+        <ImageView
+            android:id="@+id/ivEditTask"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_menu_manage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/taskProgressBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:progress="65"
+            app:layout_constraintTop_toBottomOf="@+id/tvTaskStatus" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

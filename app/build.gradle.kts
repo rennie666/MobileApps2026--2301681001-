@@ -1,8 +1,12 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+<<<<<<< Updated upstream
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.navigation.safeargs)
+=======
+    alias(libs.plugins.kotlin.ksp) // Добавяме това
+>>>>>>> Stashed changes
 }
 
 android {
@@ -17,6 +21,15 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
     }
 
     buildTypes {
@@ -43,6 +56,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+<<<<<<< Updated upstream
 
     // Navigation
     implementation(libs.androidx.navigation.fragment.ktx)
@@ -56,6 +70,10 @@ dependencies {
     // ZXing
     implementation(libs.zxing.android.embedded)
 
+=======
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+>>>>>>> Stashed changes
     testImplementation(libs.junit)
     testImplementation(libs.junit.jupiter.api)
     testRuntimeOnly(libs.junit.jupiter.engine)
@@ -68,8 +86,21 @@ dependencies {
 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+<<<<<<< Updated upstream
 }
 
 tasks.withType<Test> {
     useJUnitPlatform()
+=======
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+}
+
+// Добави това най-отдолу във файла
+kotlin {
+    jvmToolchain(17)
+>>>>>>> Stashed changes
 }

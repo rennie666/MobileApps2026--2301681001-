@@ -1,5 +1,6 @@
 package com.app.tracker.ui
 
+<<<<<<< Updated upstream
 import android.graphics.Color
 import android.graphics.Paint
 import android.content.res.ColorStateList
@@ -120,3 +121,38 @@ class TaskAdapter(
         }
     }
 }
+=======
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ProgressBar
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.app.tracker.R
+import com.app.tracker.data.Task
+
+class TaskAdapter(private val taskList: List<Task>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+    class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val tvTitle: TextView = itemView.findViewById(R.id.tvTaskTitle)
+        val tvStatus: TextView = itemView.findViewById(R.id.tvTaskStatus)
+        val progressBar: ProgressBar = itemView.findViewById(R.id.taskProgressBar)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_task, parent, false)
+        return TaskViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val task = taskList[position]
+        if (holder is TaskViewHolder) {
+            holder.tvTitle.text = task.title
+            holder.tvStatus.text = task.status
+            holder.progressBar.progress = task.progress
+        }
+    }
+
+    override fun getItemCount(): Int = taskList.size
+}
+>>>>>>> Stashed changes

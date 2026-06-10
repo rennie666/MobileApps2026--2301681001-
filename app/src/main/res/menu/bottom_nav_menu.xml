@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+<<<<<<< Updated upstream
         android:id="@+id/taskListFragment"
         android:icon="@drawable/ic_home"
         android:title="Tasks" />
@@ -13,3 +14,17 @@
         android:icon="@drawable/ic_scan"
         android:title="QR Scanner" />
 </menu>
+=======
+        android:id="@+id/navigation_home"
+        android:icon="@android:drawable/ic_menu_today"
+        android:title="Home" />
+    <item
+        android:id="@+id/navigation_detail"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="Details" />
+    <item
+        android:id="@+id/navigation_stats"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        android:title="Stats" />
+</menu>
+>>>>>>> Stashed changes

@@ -4,13 +4,19 @@ import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+<<<<<<< Updated upstream
 import androidx.appcompat.app.AppCompatDelegate
+=======
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+>>>>>>> Stashed changes
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+<<<<<<< Updated upstream
         // Apply theme preferences before inflating views
         val sharedPrefs = getSharedPreferences("theme_prefs", Context.MODE_PRIVATE)
         val isDarkMode = if (sharedPrefs.contains("is_dark_mode")) {
@@ -28,14 +34,21 @@ class MainActivity : AppCompatActivity() {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
 
+=======
+>>>>>>> Stashed changes
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
+<<<<<<< Updated upstream
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
+=======
+
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+>>>>>>> Stashed changes
         bottomNav.setupWithNavController(navController)
     }
 }
