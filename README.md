@@ -90,7 +90,7 @@ Room се използва чрез DAO интерфейс:
 | ![Dark Home Screen](./screenshots/home_dark.png) | ![Dark Statistics Screen](./screenshots/stats_dark.png) | ![Dark QR Scan Screen](./screenshots/qr_scan_dark.png) | ![Dark Details Screen](./screenshots/details_dark.png) |
 
 ## APK
-Компилираният готов файл за инсталация може да бъде намерен и изтеглен директно от:  [app-debug.apk](app/build/outputs/apk/debug/app-debug.apk)
+Компилираният готов файл за инсталация може да бъде намерен и изтеглен директно от:  [Download APK](https://github.com/rennie666/MobileApps2026--2301681001-/releases/latest/download/app-debug.apk)
 
 ## Автор
 Проектът е разработен като курсова работа по Mobile Applications.
