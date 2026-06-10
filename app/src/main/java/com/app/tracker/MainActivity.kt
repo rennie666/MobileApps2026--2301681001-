@@ -9,6 +9,9 @@ import androidx.appcompat.app.AppCompatDelegate
 =======
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -16,6 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
         // Apply theme preferences before inflating views
         val sharedPrefs = getSharedPreferences("theme_prefs", Context.MODE_PRIVATE)
@@ -36,6 +40,8 @@ class MainActivity : AppCompatActivity() {
 
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -43,8 +49,13 @@ class MainActivity : AppCompatActivity() {
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
+=======
+
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+>>>>>>> Stashed changes
 =======
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)

@@ -11,6 +11,7 @@ material = "1.13.0"
 activity = "1.12.3"
 constraintlayout = "2.2.1"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 room = "2.8.4"
 navigation = "2.8.5"
 zxing = "4.3.0"
@@ -20,6 +21,11 @@ mockito = "5.11.0"
 mockitoKotlin = "5.2.1"
 coroutinesTest = "1.8.0"
 archCoreTesting = "2.2.0"
+=======
+navigationFragmentKtx = "2.9.8"
+navigationUiKtx = "2.9.8"
+room = "2.6.1"
+>>>>>>> Stashed changes
 =======
 navigationFragmentKtx = "2.9.8"
 navigationUiKtx = "2.9.8"
@@ -35,6 +41,7 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
@@ -58,6 +65,18 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 
 
+=======
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+>>>>>>> Stashed changes
 =======
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }

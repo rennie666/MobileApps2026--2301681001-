@@ -3,6 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <color name="bg_light">#F4F6F9</color>
     <color name="purple_banner">#E2D4F0</color>
     <color name="dark_accent">#121212</color>
@@ -31,11 +32,16 @@
     <color name="study_bg">#FEF3C7</color>
     <color name="study_text">#B45309</color>
 =======
+=======
+>>>>>>> Stashed changes
 
     <color name="bg_light">#F4F6F9</color>
     <color name="purple_banner">#E2D4F0</color>
     <color name="dark_menu">#1C1C1E</color>
     <color name="mint_card">#D7EBE5</color>
     <color name="gray_text">#8E8E93</color>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 </resources>

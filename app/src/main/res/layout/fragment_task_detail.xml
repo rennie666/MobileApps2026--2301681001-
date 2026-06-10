@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -341,6 +342,13 @@
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+=======
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+</FrameLayout>
+>>>>>>> Stashed changes
 =======
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"

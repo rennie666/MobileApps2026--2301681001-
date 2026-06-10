@@ -1,6 +1,7 @@
 package com.app.tracker.ui
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import android.graphics.Color
 import android.graphics.Paint
 import android.content.res.ColorStateList
@@ -122,6 +123,8 @@ class TaskAdapter(
     }
 }
 =======
+=======
+>>>>>>> Stashed changes
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -154,5 +157,9 @@ class TaskAdapter(private val taskList: List<Task>) : RecyclerView.Adapter<Recyc
     }
 
     override fun getItemCount(): Int = taskList.size
+<<<<<<< Updated upstream
+}
+>>>>>>> Stashed changes
+=======
 }
 >>>>>>> Stashed changes

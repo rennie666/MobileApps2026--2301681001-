@@ -2,6 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         android:id="@+id/taskListFragment"
         android:icon="@drawable/ic_home"
         android:title="Tasks" />
@@ -15,6 +16,8 @@
         android:title="QR Scanner" />
 </menu>
 =======
+=======
+>>>>>>> Stashed changes
         android:id="@+id/navigation_home"
         android:icon="@android:drawable/ic_menu_today"
         android:title="Home" />
@@ -26,5 +29,9 @@
         android:id="@+id/navigation_stats"
         android:icon="@android:drawable/ic_menu_my_calendar"
         android:title="Stats" />
+<<<<<<< Updated upstream
+</menu>
+>>>>>>> Stashed changes
+=======
 </menu>
 >>>>>>> Stashed changes

@@ -2,8 +2,12 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.navigation.safeargs)
+=======
+    alias(libs.plugins.kotlin.ksp) // Добавяме това
+>>>>>>> Stashed changes
 =======
     alias(libs.plugins.kotlin.ksp) // Добавяме това
 >>>>>>> Stashed changes
@@ -57,6 +61,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
     // Navigation
     implementation(libs.androidx.navigation.fragment.ktx)
@@ -74,6 +79,10 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
 >>>>>>> Stashed changes
+=======
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+>>>>>>> Stashed changes
     testImplementation(libs.junit)
     testImplementation(libs.junit.jupiter.api)
     testRuntimeOnly(libs.junit.jupiter.engine)
@@ -87,11 +96,14 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 }
 
 tasks.withType<Test> {
     useJUnitPlatform()
 =======
+=======
+>>>>>>> Stashed changes
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.room.runtime)
@@ -102,5 +114,8 @@ tasks.withType<Test> {
 // Добави това най-отдолу във файла
 kotlin {
     jvmToolchain(17)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
