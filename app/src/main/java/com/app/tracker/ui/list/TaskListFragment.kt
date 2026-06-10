@@ -1,11 +1,14 @@
 package com.app.tracker.ui.list
 
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.widget.SwitchCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -40,6 +43,19 @@ class TaskListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Bind Theme Switch
+        val themeSwitch = view.findViewById<SwitchCompat>(R.id.theme_switch)
+        val sharedPrefs = requireContext().getSharedPreferences("theme_prefs", Context.MODE_PRIVATE)
+        themeSwitch.isChecked = sharedPrefs.getBoolean("is_dark_mode", false)
+        themeSwitch.setOnCheckedChangeListener { _, isChecked ->
+            sharedPrefs.edit().putBoolean("is_dark_mode", isChecked).apply()
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+        }
 
         // MVVM Initialization via ServiceLocator
         val repository = ServiceLocator.provideTaskRepository(requireContext())

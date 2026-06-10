@@ -92,4 +92,9 @@
     <string name="btn_share_as_text">Share as Text</string>
     <string name="btn_close">Close</string>
     <string name="error_qr_generation">Failed to generate QR Code</string>
+
+    <!-- Theme Toggling -->
+    <string name="desc_light_mode">Light mode icon</string>
+    <string name="desc_dark_mode">Dark mode icon</string>
+    <string name="desc_theme_switch">Toggle between light and dark theme</string>
 </resources>
